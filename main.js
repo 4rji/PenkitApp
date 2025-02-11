@@ -29,7 +29,7 @@ function createWindow() {
     if (isDev) {
         // En desarrollo
         mainWindow.loadURL('http://localhost:3000');
-        mainWindow.webContents.openDevTools();
+        // mainWindow.webContents.openDevTools();  // Comentamos esta línea para que no abra DevTools
         
         // Habilitar recarga en vivo
         mainWindow.webContents.on('did-fail-load', () => {

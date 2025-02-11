@@ -11,7 +11,6 @@ const ProxychainsPage = () => {
   };
 
   return (
-          <h3 style={{
     <>
       <Head>
         <title>Proxychains - PenKit Pro</title>
