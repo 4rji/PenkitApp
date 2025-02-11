@@ -1,0 +1,86 @@
+{
+  "name": "penkitapp",
+  "version": "1.0.0",
+  "description": "PenKitApp - Herramientas de Pentesting",
+  "main": "main.js",
+  "homepage": "https://penkitapp.com",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export",
+    "electron-dev": "cross-env NODE_ENV=development concurrently -k \"npm run dev\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-build": "next build && next export && electron .",
+    "pack": "next build && next export && electron-builder --dir",
+    "dist": "next build && next export && electron-builder",
+    "make": "next build && next export && electron-builder -m",
+    "make:linux": "next build && next export && electron-builder -l",
+    "make:deb": "next build && next export && electron-builder --linux deb",
+    "make:appimage": "next build && next export && electron-builder --linux AppImage",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^14.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^28.3.3",
+    "electron-builder": "^25.1.8",
+    "wait-on": "^8.0.2"
+  },
+  "build": {
+    "appId": "com.penkitapp.app",
+    "productName": "PenKitApp",
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "icon": "build/icon.png",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ]
+    },
+    "files": [
+      "out/**/*",
+      "main.js",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "win": {
+      "icon": "build/icon.ico"
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "deb",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.png",
+      "category": "Development",
+      "maintainer": "4rji",
+      "vendor": "4rji",
+      "synopsis": "Herramientas de Pentesting",
+      "description": "Suite de herramientas para pentesting y seguridad informática"
+    }
+  }
+}
