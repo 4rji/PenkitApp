@@ -52,7 +52,11 @@ const Home = () => {
       </div>
       <h2 className="section-title">Resources</h2>
       <div className="post" style={{ display: searchText === 'AA' ? 'block' : 'none' }}>
-        <h2>Ligolo</h2>
+        <h2>
+          <Link href="/tools/ligolo">
+            Ligolo
+          </Link>
+        </h2>
         <p>Advanced tunneling tool for penetration testing that creates secure TUN interfaces, offering a lightweight and efficient alternative to traditional SOCKS proxies.</p>
         <div className="tag">Network</div>
         <div className="tag">Pentesting</div>
@@ -62,7 +66,11 @@ const Home = () => {
       </div>
 
       <div className="post" style={{ display: searchText === 'AA' ? 'block' : 'none' }}>
-        <h2>Proxychains</h2>
+        <h2>
+          <Link href="/tools/proxychains">
+            Proxychains
+          </Link>
+        </h2>
         <p>A tool for routing your internet traffic through proxy servers, providing anonymity and the ability to bypass network restrictions.</p>
         <div className="tag">Network</div>
         <div className="tag">Privacy</div>
