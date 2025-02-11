@@ -1,8 +1,15 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Template = () => {
+  const router = useRouter();
+
+  const handleBack = () => {
+    router.back();
+  };
+
   return (
     <>
       <Head>
@@ -12,6 +19,7 @@ const Template = () => {
       <div style={{ fontFamily: "'Roboto Mono', monospace", backgroundColor: '#0d1117', color: '#33ff77', margin: 0, padding: '20px' }}>
         <div className="content-wrapper">
           <div className="documentation">
+            <div className="back-arrow" onClick={handleBack}>←</div>
             <h2>Template</h2>
             {/* Aquí va el contenido */}
           </div>
@@ -31,6 +39,7 @@ const Template = () => {
             border-radius: 10px;
             background: #0d1117;
             text-align: left;
+            position: relative;
           }
           .category-info {
             margin-bottom: 30px;
@@ -112,6 +121,32 @@ const Template = () => {
           .close-button:hover {
             color: #88cc88;
             transform: scale(1.1);
+          }
+          .back-arrow {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #33ff77;
+            transition: all 0.3s ease;
+          }
+          .back-arrow:hover {
+            transform: scale(1.2);
+            color: #88cc88;
+          }
+          .back-button {
+            background: #33ff77;
+            color: #0d1117;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+          }
+          .back-button:hover {
+            background: #2be066;
           }
         `}</style>
       </div>

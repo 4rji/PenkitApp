@@ -21,6 +21,7 @@ export default function Ligolo() {
       </Head>
       <div className="content-wrapper">
         <div className="documentation">
+          <div className="back-arrow" onClick={handleBack}>←</div>
           <div className="category-info" id="statci-steps">
             <h3 className="category-title">Tunnel Like a Pro: Secure, Simple, and Efficient!</h3>
             <h4 className="category-description">
@@ -561,9 +562,9 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
             </li>
           </ul>
         </div>
-        <button className="back-button" onClick={handleBack}>
-          ← Back
-        </button>
+        <Link href="/tools">
+          <button className="back-button">← Back to Tools</button>
+        </Link>
       </div>
 
       <style jsx>{`
@@ -584,6 +585,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
           border-radius: 10px;
           background: #0d1117;
           text-align: left;
+          font-family: 'Lexie Readable', sans-serif;
         }
         .category-info {
           margin-bottom: 30px;
@@ -669,6 +671,19 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
         }
         .back-button:hover {
           background: #2be066;
+        }
+        .back-arrow {
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          font-size: 2.5rem;
+          cursor: pointer;
+          color: #33ff77;
+          transition: all 0.3s ease;
+        }
+        .back-arrow:hover {
+          transform: scale(1.2);
+          color: #88cc88;
         }
       `}</style>
     </>
